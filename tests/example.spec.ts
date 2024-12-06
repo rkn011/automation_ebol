@@ -49,6 +49,7 @@ test('Navigate to Create BOl screen', async ({ page }) => {
   await page.getByRole('link', { name: 'Create BOL', exact: true }).click();
   const page1 = await page1Promise;
   await expect(page1.locator('#pageTl')).toContainText('BOL Processing');
+  console.log('Navigate to Create BOl screen complete');
 });
 
 test('Navigate to Create BOl from excel screen', async ({ page }) => {
@@ -57,6 +58,7 @@ test('Navigate to Create BOl from excel screen', async ({ page }) => {
   await page.getByRole('link', { name: 'Create BOL From Excel', exact: true }).click();
   const page2 = await page2Promise;
   await expect(page2.locator('h3')).toContainText('BOL Creation from Excel');
+  console.log('Navigate to Create BOl from excel screen complete');
 });
 
 // test('Navigate to ebol sysadmin screen', async ({ page }) => {
@@ -74,6 +76,7 @@ test('Navigate to Search BOL screen', async ({ page }) => {
   await page.getByRole('link', { name: 'Search BOL', exact: true }).click();
   const page5 = await page5Promise;
   await expect(page5.getByRole('heading')).toContainText('BOL Search');
+  console.log('Navigate to Search BOL screen complete');
 });
 
 test('Navigate to Patron Master screen', async ({ page }) => {
@@ -82,6 +85,7 @@ test('Navigate to Patron Master screen', async ({ page }) => {
   await page.getByRole('link', { name: 'Patron Master', exact: true }).click();
   const page6 = await page6Promise;
   await expect(page6.getByRole('heading')).toContainText('Patron Search');
+  console.log('Navigate to Patron Master screen complete');
 });
 
 
@@ -92,6 +96,7 @@ test('Navigate to template Master screen', async ({ page }) => {
   await page.getByRole('link', { name: 'BOL Template Master', exact: true }).click();
   const page8 = await page8Promise;
   await expect(page8.getByRole('heading')).toContainText('Template Search');
+  console.log('Navigate to template Master screen complete');
 });
 
 test('Navigate to Unit Train Search screen', async ({ page }) => {
@@ -100,6 +105,7 @@ test('Navigate to Unit Train Search screen', async ({ page }) => {
   await page.getByRole('link', { name: 'Unit Train Search', exact: true }).click();
   const page9 = await page9Promise;
   await expect(page9.getByRole('heading')).toContainText('Unit Train Search');
+  console.log('Navigate to Unit Train Search complete');
 });
 
 test('Dynamic Pattern BOL create Advised Name', async ({ page }) => {
@@ -163,7 +169,7 @@ test('Dynamic Pattern BOL create Advised Name', async ({ page }) => {
   await page8.getByRole('link', { name: 'Save' }).click();
   await expect(page8.locator('#eBolWrapper')).toContainText('Data saved successfully');
   await page8.getByRole('link', { name: 'Cancel' }).click();
-
+  console.log('Dynamic Pattern BOL create Advised Name complete');
 });
 
 
@@ -228,7 +234,7 @@ test('Dynamic Pattern BOL create Consignee Name', async ({ page }) => {
   await page8.getByRole('link', { name: 'Save' }).click();
   await expect(page8.locator('#eBolWrapper')).toContainText('Data saved successfully');
   await page8.getByRole('link', { name: 'Cancel' }).click();
-
+  console.log('Dynamic Pattern BOL create Consignee Name complete');
 });
 
 test('Dynamic Pattern BOL create Party To Receive Freight Bill', async ({ page }) => {
@@ -292,7 +298,7 @@ test('Dynamic Pattern BOL create Party To Receive Freight Bill', async ({ page }
   await page8.getByRole('link', { name: 'Save' }).click();
   await expect(page8.locator('#eBolWrapper')).toContainText('Data saved successfully');
   await page8.getByRole('link', { name: 'Cancel' }).click();
-
+  console.log('Dynamic Pattern BOL create Party To Receive Freight Bill complete');
 });
 
 test('Dynamic Pattern BOL create Seal Numbers', async ({ page }) => {
@@ -407,7 +413,7 @@ test('Dynamic Pattern BOL create Seal Numbers', async ({ page }) => {
   await page8.getByRole('link', { name: 'Save' }).click();
   await expect(page8.locator('#eBolWrapper')).toContainText('Data saved successfully');
   await page8.getByRole('link', { name: 'Cancel' }).click();
-
+  console.log('Dynamic Pattern BOL create Seal Numbers complete');
 });
 
 
@@ -633,6 +639,7 @@ test('Edit BOL', async ({ page }) => {
   await expect(page1.locator('[id="wbGenCustomFieldFormBeans0\\.customFieldName"]')).toHaveValue('Custom field Name');
   await expect(page1.locator('[id="wbGenCustomFieldFormBeans0\\.customFieldValue"]')).toHaveValue('custom field value 1');
   await page1.getByRole('link', { name: 'Cancel' }).click();
+  console.log('Edit BOL complete');
 });
 
 
@@ -681,16 +688,16 @@ test('Patron Master Functions Add edit Search Delete', async ({ page }) => {
   await page1.getByRole('link', { name: 'Find' }).click();
   await page1.waitForTimeout(3000);
   page1.once('dialog', dialog => {
-    console.log(`Dialog message: ${dialog.message()}`);
+    
     dialog.accept();
-    //dialog.dismiss().catch(() => {});
+
   });
   await page1.getByRole('link', { name: 'Delete' }).click();
   await page1.waitForTimeout(3000);
   
   await expect(page1.locator('#patronSearchesFormBean')).toContainText('Patron Deleted Successfully.');
   await expect(page1.locator('#patronSearchesFormBean')).toContainText('No records found');
-
+  console.log('Patron Master Functions Add edit Search Delete Test case compleated');  
 });
 
 test('Template Add', async ({ page }) => {
@@ -809,7 +816,7 @@ test('Template Add', async ({ page }) => {
   await page1.waitForTimeout(3000);
   await expect(page1.locator('#otherPartiesFB')).toContainText('Data saved successfully');
   page1.once('dialog', dialog => {
-    console.log(`Dialog message: ${dialog.message()}`);
+    console.log();
     //dialog.dismiss().catch(() => {});
     dialog.accept();
   });
@@ -818,7 +825,7 @@ test('Template Add', async ({ page }) => {
   await page1.locator('#RWCSearchCriteria').fill(CreateTemplateName);
   await page1.getByRole('link', { name: 'Find' }).click();
   await expect(page1.locator('#searchResult')).toContainText('Total Items: 1');
-
+  console.log('Add Template compleated');  
 });
 
 test('Edit Template', async ({ page }) => {
@@ -838,8 +845,7 @@ test('Edit Template', async ({ page }) => {
   await expect(page1.locator('#miscDetailsFormBean')).toContainText('Data saved successfully');
   await page1.getByRole('link', { name: 'Ok' }).click();
   page1.once('dialog', dialog => {
-    console.log(`Dialog message: ${dialog.message()}`);
-    //dialog.dismiss().catch(() => {});
+        //dialog.dismiss().catch(() => {});
     dialog.accept();
   });
   await page1.getByRole('link', { name: 'Cancel' }).click();
@@ -849,6 +855,7 @@ test('Edit Template', async ({ page }) => {
   await page1.getByRole('link', { name: 'Misc' }).click();
   await expect(page1.getByText('This Is special instructions')).toHaveValue('This Is special instructions');
   await page1.getByRole('link', { name: 'Cancel' }).click();
+  console.log('Edit Template compleated');  
 });
 
 test('Delete Template', async ({ page }) => {
@@ -864,8 +871,8 @@ test('Delete Template', async ({ page }) => {
   await page1.getByRole('link', { name: CreateTemplateName }).click();
   await page1.waitForTimeout(3000);
   page1.once('dialog', dialog => {
-    console.log(`Dialog message: ${dialog.message()}`);
     dialog.accept();
+    console.log('Message Accepted');
   });
   await page1.getByRole('link', { name: 'Inactivate' }).click();
   await page1.getByRole('link', { name: 'Cancel' }).click();
@@ -875,12 +882,12 @@ test('Delete Template', async ({ page }) => {
   page1.once('dialog', dialog => {
     console.log(`Dialog message: ${dialog.message()}`);
     dialog.accept();
+    console.log('Message Accepted');
   });
   await page1.getByRole('link', { name: 'Delete' }).click();
   await page1.waitForTimeout(3000);
   await expect(page1.locator('#eboWaybillSearchTpl')).toContainText(CreateTemplateName+' template deleted successfully.');
- 
-  
+  console.log('Delete Template compleated');  
 });
 
 
