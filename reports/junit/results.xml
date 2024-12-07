@@ -1,0 +1,101 @@
+<testsuites id="" name="" tests="15" failures="0" skipped="8" errors="0" time="1855.535759">
+<testsuite name="example.spec.ts" timestamp="2024-12-07T13:05:06.717Z" hostname="chromium" tests="15" failures="0" skipped="8" time="1853.876" errors="0">
+<testcase name="Navigate to Create BOl screen" classname="example.spec.ts" time="38.81">
+<system-out>
+<![CDATA[Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is now visible!
+Navigate to Create BOl screen complete
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigate to Create BOl from excel screen" classname="example.spec.ts" time="40.203">
+<system-out>
+<![CDATA[Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is now visible!
+Navigate to Create BOl from excel screen complete
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigate to Search BOL screen" classname="example.spec.ts" time="33.056">
+<system-out>
+<![CDATA[Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is now visible!
+Navigate to Search BOL screen complete
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigate to Patron Master screen" classname="example.spec.ts" time="25.339">
+<system-out>
+<![CDATA[Button is not visible yet. Checking again.....
+Button is now visible!
+Navigate to Patron Master screen complete
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigate to template Master screen" classname="example.spec.ts" time="34.341">
+<system-out>
+<![CDATA[Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is now visible!
+Navigate to template Master screen complete
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigate to Unit Train Search screen" classname="example.spec.ts" time="52.566">
+<system-out>
+<![CDATA[Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is not visible yet. Checking again.....
+Button is now visible!
+Navigate to Unit Train Search complete
+]]>
+</system-out>
+</testcase>
+<testcase name="Dynamic Pattern BOL create Advised Name" classname="example.spec.ts" time="59.492">
+<system-out>
+<![CDATA[Button is not visible yet. Checking again.....
+Button is now visible!
+Dynamic Pattern BOL create Advised Name complete
+]]>
+</system-out>
+</testcase>
+<testcase name="Dynamic Pattern BOL create Consignee Name" classname="example.spec.ts" time="1570.069">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dynamic Pattern BOL create Party To Receive Freight Bill" classname="example.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Dynamic Pattern BOL create Seal Numbers" classname="example.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Edit BOL" classname="example.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Patron Master Functions Add edit Search Delete" classname="example.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Template Add" classname="example.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Edit Template" classname="example.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Delete Template" classname="example.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

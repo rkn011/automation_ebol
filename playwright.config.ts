@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { on } from 'events';
 
 /**
  * Read environment variables from file.
@@ -31,7 +32,8 @@ export default defineConfig({
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
+    video:'off',
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 

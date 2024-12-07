@@ -1,5 +1,20 @@
 import { test, expect } from '@playwright/test';
 
+
+const currentDate = new Date();
+const minutes = currentDate.getMinutes(); 
+const seconds = currentDate.getSeconds(); 
+
+const BolNumber_1 = "1"+minutes+seconds ;
+const BolNumber_2 = "2"+minutes+seconds;
+const BolNumber_3 = "3"+minutes+seconds;
+const BolNumber_4 = "4"+minutes+seconds;
+const CreateTemplateName= "AUTO_TEMPLATE";
+
+const Mytimeout = 30000; // 30 seconds timeout
+const interval = 1000; // Check every 1 second
+let elapsedTime = 0;
+
 test.beforeEach(async ({ page }) => {
   // STG environment 
   await page.goto('https://sxstg.shipxpress.net/');
@@ -8,9 +23,30 @@ test.beforeEach(async ({ page }) => {
   await page.getByLabel('Password').click();
   await page.getByLabel('Password').fill('pLXXoCQj');
   await page.getByRole('button', { name: 'Sign In' }).click();
+   await page.goto('https://stgportal.kaleris.net/#/home/management/1/YARD%20MANAGEMENT');
 
-  await page.goto('https://stgportal.kaleris.net/#/home/management/1/YARD%20MANAGEMENT');
-  await page.getByRole('link', { name: 'Electronic Bill of Lading' }).click();
+   const ebollink = page.getByRole('link',{name:'Electronic Bill of Lading'});
+
+   while (elapsedTime<Mytimeout)
+    {
+      const ebollinkisVisibale = await ebollink.isVisible();
+      if (ebollinkisVisibale) 
+      {
+        console.log("Button is now visible!");
+        ebollink.click();
+        break;
+      }
+      else
+      {
+        console.log("Button is not visible yet. Checking again.....");
+        elapsedTime += interval; // Increase elapsed time
+        await page.reload();
+        await page.waitForTimeout(3000);
+      }
+    }
+
+  // await page.reload();
+  // await page.getByRole('link', { name: 'Electronic Bill of Lading' }).click();
   expect(page).toHaveTitle('KALERIS iTrax Application');
 
   //Qa2 Environment 
@@ -27,15 +63,7 @@ test.beforeEach(async ({ page }) => {
 
 });
 
-const currentDate = new Date();
-const minutes = currentDate.getMinutes(); 
-const seconds = currentDate.getSeconds(); 
 
-const BolNumber_1 = "1"+minutes+seconds ;
-const BolNumber_2 = "2"+minutes+seconds;
-const BolNumber_3 = "3"+minutes+seconds;
-const BolNumber_4 = "4"+minutes+seconds;
-const CreateTemplateName= "AUTO_TEMPLATE";
 
 
 
