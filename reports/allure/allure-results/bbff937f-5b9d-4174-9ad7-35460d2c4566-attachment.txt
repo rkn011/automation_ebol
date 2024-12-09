@@ -1,5 +1,0 @@
-Button is not visible yet. Checking again.....
-Button is now visible!
-AUTO_TEMPLATE5038
-
-Add Template compleated
