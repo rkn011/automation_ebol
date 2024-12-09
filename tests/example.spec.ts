@@ -9,7 +9,7 @@ const BolNumber_1 = "1"+minutes+seconds ;
 const BolNumber_2 = "2"+minutes+seconds;
 const BolNumber_3 = "3"+minutes+seconds;
 const BolNumber_4 = "4"+minutes+seconds;
-const CreateTemplateName= "AUTO_TEMPLATE";
+const CreateTemplateName= "AUTO_TEMPLATE"+minutes+seconds;
 
 const Mytimeout = 30000; // 30 seconds timeout
 const interval = 1000; // Check every 1 second
@@ -783,7 +783,7 @@ test('Template Add', async ({ page }) => {
   await page1.locator('input[name="vecForRouteGrid\\[0\\]\\.roadId"]').fill('BNSF');
   await page1.waitForTimeout(3000);
   await page1.getByRole('link', { name: 'Save' }).click();
-
+  await page1.waitForTimeout(3000);
   await expect(page1.locator('#rwcPrimaryDetailsFormBean')).toContainText('Data saved successfully');
   await page1.getByRole('link', { name: 'Freight' }).click();
   await page1.locator('#paymentMethodCode').selectOption('NR');
