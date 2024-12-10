@@ -48,7 +48,8 @@ export default defineConfig({
       name: 'chromium',
       use: {
         channel: 'chrome',
-        viewport: null,
+        viewport: { width: 1280, height: 720 },
+        //viewport: null,
         launchOptions: {
           args: ["--start-maximized"]
         },
